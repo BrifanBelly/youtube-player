@@ -1,12 +1,50 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
+    "sourceMap": true,
     "outDir": "../out-tsc/spec",
-    "baseUrl": "./",
     "module": "commonjs",
+    "target": "es5",
+    "baseUrl": "",
+    "paths": {
+      "~/*": [
+        "/*"
+      ],
+      "@utils/*": [
+        "app/shared/utils/*"
+      ],
+      "@shared/*": [
+        "app/shared/*"
+      ],
+      "@animations/*": [
+        "app/shared/animations/*"
+      ],
+      "@core/*": [
+        "app/core/*"
+      ],
+      "@api/*": [
+        "app/core/api/*"
+      ],
+      "@resolvers/*": [
+        "app/core/resolvers/*"
+      ],
+      "@store/*": [
+        "app/core/store/*"
+      ],
+      "@mocks/*": [
+        "../tests/mocks/*"
+      ],
+      "@env/*": [
+        "environments/*"
+      ]
+    },
     "types": [
       "jasmine",
-      "node"
+      "node",
+      "gapi",
+      "gapi.youtube",
+      "gapi.auth2",
+      "youtube"
     ]
   },
   "files": [
